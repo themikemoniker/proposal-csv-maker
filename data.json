@@ -1,0 +1,36 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Wireless Mouse",
+        "category": "Electronics",
+        "price": 29.99,
+        "image": ""
+      },
+      {
+        "id": 2,
+        "name": "Water Bottle",
+        "category": "Accessories",
+        "price": 12.5,
+        "image": ""
+      }
+    ],
+    "clients": [
+      {
+        "id": 101,
+        "name": "Alice Smith",
+        "email": "alice@example.com"
+      },
+      {
+        "id": 102,
+        "name": "Bob Lee",
+        "email": "bob@example.com"
+      },
+      {
+        "id": 103,
+        "name": "Carla Gomez",
+        "email": "carla@example.com"
+      }
+    ]
+  }
+  

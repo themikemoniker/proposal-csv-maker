@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invoice Proposal</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-6 space-y-8">
+  <h1 class="text-3xl font-bold">Invoice Proposal</h1>
+
+  <!-- Company Info -->
+  <div>
+    <input type="text" id="companyName" placeholder="Company Name" class="border p-2 mr-2">
+    <input type="text" id="companyAddress" placeholder="Company Address" class="border p-2">
+  </div>
+
+  <!-- Buttons -->
+  <div class="space-x-4">
+    <input type="file" id="catalogueFileInput" accept=".json" hidden />
+    <button id="loadCatalogue" class="bg-purple-500 text-white px-4 py-2">Load Catalogue from File</button>
+    <button id="saveCatalogue" class="bg-gray-600 text-white px-4 py-2">Save Catalogue to File</button>
+    <button id="exportCSV" class="bg-green-600 text-white px-4 py-2">Create Proposal</button>
+  </div>
+
+  <!-- Filter and Sort -->
+  <div class="space-x-4">
+    <select id="categoryFilter" class="border p-2">
+      <option value="">All Categories</option>
+    </select>
+    <select id="sortBy" class="border p-2">
+      <option value="name">Sort by Name</option>
+      <option value="price">Sort by Price</option>
+    </select>
+  </div>
+
+  <!-- New Product Form -->
+  <div class="border p-4 rounded bg-gray-100">
+    <h3 class="text-xl font-semibold mb-2">Add New Product</h3>
+    <form id="newProductForm" class="flex flex-wrap gap-2 items-center">
+      <input type="text" id="newName" placeholder="Name" class="border p-2" required>
+      <input type="text" id="newCategory" placeholder="Category" class="border p-2" required>
+      <input type="number" id="newPrice" placeholder="Price" min="0" step="0.01" class="border p-2 w-24" required>
+      <input type="file" id="newImage" accept="image/*" class="border p-2">
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2">Add</button>
+    </form>
+  </div>
+
+  <!-- Product List -->
+  <div>
+    <h2 class="text-2xl font-semibold">Catalogue</h2>
+    <ul id="productList" class="space-y-4 mt-2"></ul>
+  </div>
+
+  <!-- Cart Summary -->
+  <div>
+    <h2 class="text-2xl font-semibold">Proposal (Cart)</h2>
+    <ul id="cartList" class="space-y-2 mb-2"></ul>
+    <p id="cartSubtotal" class="font-semibold">Subtotal: $0.00</p>
+    <p id="cartTotal" class="font-semibold">Total (IVA 16%): $0.00</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
